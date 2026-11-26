@@ -11,7 +11,7 @@ def main() -> None:
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as handle:
         handle.write(ENTRY + "\n")
-    # The grader collects /output as another user, so only the file gets 0644.
+    # The grader reads /output as another user; make only the file world-readable.
     os.chmod(OUTPUT_FILE, 0o644)
 
 
